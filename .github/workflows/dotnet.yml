@@ -7,8 +7,12 @@ jobs:
   build_test_deploy:
     env:
       NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     permissions: write-all
+
     steps:
     - uses: actions/checkout@v3
       with:
