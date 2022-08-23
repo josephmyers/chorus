@@ -25,6 +25,7 @@ jobs:
     - name: For Mercurial
       if: matrix.os == 'ubuntu-latest'
       run: |
+        sudo apt install mercurial
         sudo apt install python2
     - name: Restore
       run: dotnet restore
