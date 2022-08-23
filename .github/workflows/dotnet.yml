@@ -27,6 +27,7 @@ jobs:
       run: |
         sudo apt install mercurial
         sudo apt install python2
+        sudo apt install python-is-python2
     - name: Restore
       run: dotnet restore
     - name: Build
